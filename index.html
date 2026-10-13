@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="GlowSkin UK demo skincare store.">
+  <title>GlowSkin UK | Skincare Demo</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #393330;
+      background: #fcfaf7;
+    }
+    header {
+      padding: 24px;
+      text-align: center;
+      background: white;
+      border-bottom: 1px solid #eee6df;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+    nav { margin-top: 16px; }
+    nav a {
+      color: #67564d;
+      margin: 0 12px;
+      text-decoration: none;
+    }
+    .hero {
+      background: #efe4da;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    h1 { font-size: 42px; }
+    .hero p { font-size: 18px; }
+    .btn {
+      background: #685649;
+      color: white;
+      border: 0;
+      border-radius: 5px;
+      padding: 14px 22px;
+      cursor: pointer;
+    }
+    .products {
+      padding: 50px 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
+    h2 { text-align: center; margin-bottom: 30px; }
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+    }
+    .product {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #eee9e3;
+      border-radius: 10px;
+    }
+    .product-image {
+      background: #f2e6dd;
+      padding: 45px 10px;
+      font-size: 60px;
+      border-radius: 8px;
+    }
+    .price { font-weight: bold; }
+    .message {
+      text-align: center;
+      min-height: 30px;
+      margin-top: 25px;
+    }
+    footer {
+      text-align: center;
+      padding: 35px;
+      background: #eee5de;
+      margin-top: 35px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">GLOWSKIN</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Glow Starts With You</h1>
+    <p>Simple skincare for everyday radiance.</p>
+    <a href="#products">
+      <button class="btn">Explore Products</button>
+    </a>
+  </section>
+
+  <section class="products" id="products">
+    <h2>Our Bestsellers</h2>
+    <div class="grid">
+
+      <div class="product">
+        <div class="product-image">🧴</div>
+        <h3>Hydrating Face Serum</h3>
+        <p>For fresh, hydrated skin.</p>
+        <p class="price">£24.00</p>
+        <button class="btn"
+          onclick="addToCart('Serum', 24)">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🌸</div>
+        <h3>Daily Moisturiser</h3>
+        <p>Everyday hydration.</p>
+        <p class="price">£18.00</p>
+        <button class="btn"
+          onclick="addToCart('Moisturiser', 18)">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="product">
+        <div class="product-image">☀️</div>
+        <h3>Daily SPF 50</h3>
+        <p>Everyday sun protection.</p>
+        <p class="price">£21.00</p>
+        <button class="btn"
+          onclick="addToCart('SPF', 21)">
+          Add to Cart
+        </button>
+      </div>
+
+    </div>
+    <p class="message" id="message"
+       aria-live="polite"></p>
+  </section>
+
+  <section id="about" class="products">
+    <h2>About GlowSkin</h2>
+    <p style="text-align:center">
+      GlowSkin is a fictional skincare brand
+      created for a digital marketing
+      and analytics portfolio project.
+      No products are sold on this website.
+    </p>
+  </section>
+
+  <footer>
+    GlowSkin UK | Educational Demo Website
+  </footer>
+
+  <script>
+    function addToCart(name, price) {
+      document.getElementById("message")
+        .textContent =
+        name + " added to demo cart (£" +
+        price + "). No real order was placed.";
+    }
+  </script>
+</body>
+</html>
